@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Calidad del Aire - San Borja</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; background-color: #f4f6f9; color: #333; }
+        .header { text-align: center; padding: 20px; background: #2c3e50; color: white; border-radius: 8px; margin-bottom: 20px; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .box { flex: 1; min-width: 45%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0,0,0,0.05); }
+        .full-box { width: 100%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0,0,0,0.05); margin-top: 20px; }
+        iframe { width: 100%; height: 450px; border: none; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        th, td { border: 1px solid #e0e0e0; padding: 12px; text-align: center; }
+        th { background-color: #34495e; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .footer-text { font-size: 12px; color: #7f8c8d; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Análisis y Pronóstico de Calidad del Aire - Estación San Borja</h1>
+        <p><b>Autores:</b> Equipo 4 · <b>Fuente de Datos:</b> SENAMHI / MINAM · Proyecto Integrador CDA 2026</p>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h3>Ubicación de la Estación de Monitoreo Analizada</h3>
+            <iframe srcdoc="<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    <script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;></script>
+    <script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;></script>
+    <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;></script>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/>
+    
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
+            <style>
+                #map_ca6461e4e0fea97735e48feeed18ad62 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_ca6461e4e0fea97735e48feeed18ad62&quot; ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ca6461e4e0fea97735e48feeed18ad62 = L.map(
+                &quot;map_ca6461e4e0fea97735e48feeed18ad62&quot;,
+                {
+                    center: [-12.108489319783708, -77.0070986009805],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 14,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_ca6461e4e0fea97735e48feeed18ad62);
+
+            
+
+        
+    
+            var tile_layer_20b019fd970a1fb432f7622ded1d0d77 = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_20b019fd970a1fb432f7622ded1d0d77.addTo(map_ca6461e4e0fea97735e48feeed18ad62);
+        
+    
+            var marker_1568ad056ffae95e459084c86b798d39 = L.marker(
+                [-12.108489319783708, -77.0070986009805],
+                {
+}
+            ).addTo(map_ca6461e4e0fea97735e48feeed18ad62);
+        
+    
+            var icon_fc0065806108cc437ae8d8505ea21d75 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_a0438376267f240516e7248d38902a60 = L.popup({
+  &quot;maxWidth&quot;: &quot;100%&quot;,
+});
+
+        
+            
+                var html_0fe951094e61f26efd05e92c6b250c04 = $(`<div id=&quot;html_0fe951094e61f26efd05e92c6b250c04&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><b>Estación San Borja</b><br>Monitoreo de Calidad del Aire</div>`)[0];
+                popup_a0438376267f240516e7248d38902a60.setContent(html_0fe951094e61f26efd05e92c6b250c04);
+            
+        
+
+        marker_1568ad056ffae95e459084c86b798d39.bindPopup(popup_a0438376267f240516e7248d38902a60)
+        ;
+
+        
+    
+    
+            marker_1568ad056ffae95e459084c86b798d39.bindTooltip(
+                `<div>
+                     Estación San Borja
+                 </div>`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_1568ad056ffae95e459084c86b798d39.setIcon(icon_fc0065806108cc437ae8d8505ea21d75);
+            
+</script>
+</html>"></iframe>
+        </div>
+
+        <div class="box">
+            <h3>Métricas Consolidadas de Validación Cruzada</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable Objetivo</th>
+                        <th>Modelo</th>
+                        <th>R² Score</th>
+                        <th>RMSE</th>
+                        <th>MAE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>PM2.5</b></td>
+                        <td>Random Forest (Optimizado)</td>
+                        <td>0.796</td>
+                        <td>4.349</td>
+                        <td>2.810</td>
+                    </tr>
+                    <tr>
+                        <td><b>PM2.5</b></td>
+                        <td>LightGBM (Rendimiento Base)</td>
+                        <td>0.807</td>
+                        <td>4.226</td>
+                        <td>2.696</td>
+                    </tr>
+                    <tr>
+                        <td><b>PM10</b></td>
+                        <td>Random Forest (Optimizado)</td>
+                        <td>0.852</td>
+                        <td>13.312</td>
+                        <td>8.601</td>
+                    </tr>
+                    <tr>
+                        <td><b>PM10</b></td>
+                        <td>LightGBM (Mejor Desempeño)</td>
+                        <td>0.860</td>
+                        <td>12.945</td>
+                        <td>8.333</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="footer-text"><b>Criterio Metodológico:</b> Se entrenaron los modelos utilizando variables meteorológicas y rezagos temporales de inercia horaria (Lag 1 y Promedio Móvil 3h). Se conservaron los outliers legítimos al representar episodios críticos reales de contaminación atmosférica urbana.</p>
+        </div>
+    </div>
+
+    <div class="full-box">
+        <div>                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="69f9581d-9f67-48bc-90bc-b0e2f192e74b" class="plotly-graph-div" style="height:750px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("69f9581d-9f67-48bc-90bc-b0e2f192e74b")) {                    Plotly.newPlot(                        "69f9581d-9f67-48bc-90bc-b0e2f192e74b",                        [{"line":{"color":"black","width":1.5},"name":"Real","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"cT0K16OQQECamZmZmSlhQLgehetRmEBAw\u002fUoXI8CTUD2KFyPwtVEQDMzMzMzU0FAmpmZmZl5QkCamZmZmQlkQEjhehSuJ0ZASOF6FK5nUUCF61G4HuVKQHE9Ctej8DFAAAAAAAAgTkDD9Shcj6JIQM3MzMzMjD1AFK5H4XoUOEDsUbgehWs\u002fQLgehetReEVAZmZmZmZmR0CPwvUoXC9DQK5H4XoUTkdAMzMzMzMzTUCamZmZmZlXQClcj8L1qERArkfhehReUECuR+F6FM5GQKRwPQrX41BAMzMzMzNzTkBmZmZmZsZaQHE9CtejcD9AzczMzMycYECamZmZmYlSQAAAAAAAAF9AFK5H4XrUR0DNzMzMzCxUQMP1KFyPIkJAFK5H4XrkU0DD9ShcjwI9QLgehetRuEFAZmZmZmbGWUApXI\u002fC9ShMQOxRuB6Fe1BAMzMzMzOzW0CamZmZmdlFQGZmZmZmhkpAw\u002fUoXI9iQkDsUbgehWs\u002fQKRwPQrXY0VAH4XrUbieQ0CamZmZmdlWQDMzMzMzczdAuB6F61FYQ0Bcj8L1KExSQM3MzMzMDFJA9ihcj8L1PkA9CtejcH08QOF6FK5HgVBApHA9CtcjU0Bcj8L1KLxCQOF6FK5HQUtA7FG4HoULSECF61G4HkVDQArXo3A9SktAAAAAAADAVkAUrkfhenRMQGZmZmZmZkxAUrgehevxRECF61G4HjVTQGZmZmZmBlVAXI\u002fC9SjcQkCPwvUoXE9OQGZmZmZmplhAMzMzMzMzVkBmZmZmZuZeQD0K16NwXUJACtejcD2qQEBxPQrXoxBOQOxRuB6F601Aj8L1KFyvQkBmZmZmZnZSQLgehetRGE5AZmZmZmamXEB7FK5H4bpLQDMzMzMzE0tAmpmZmZlZYkCkcD0K12M7QM3MzMzM7EpAcT0K16OwUUCamZmZmXlMQK5H4XoUzkhAzczMzMyMVUDsUbgehWtIQOF6FK5HgUdAZmZmZmbGT0A9CtejcF1LQDMzMzMzc1ZA9ihcj8L1MkAK16NwPapBQHsUrkfhWlNAcT0K16MwPEA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"crimson","dash":"dash"},"name":"Pred RF","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"ATdDbY4JPUDTDgebrzBhQFNs0yhJhVBAWMhjKRhqUkC0coDMTHNGQANX9iCA4DtAXYkMfQ8cQEADmnmL63pZQA1KtUQKuEJABVK1dcp9R0D76EAPDsxIQO59suSu5jVARCjtdDllU0C9Q0QRql1IQJdXM0f7JUdAJo7UaF8+S0DF6S52aF4\u002fQNf+HdDTaElAm3SBVhBDSUD2tPrfJgNEQPH9r0190ldAk4FdYgO5T0BKmzpTSkVYQFqYqN9p+UZAUg\u002fHdJQ5VUChc30XKKNNQO1YBfI431BA7\u002fYXsy4OSkDTE1sf4ahUQLF16xqzbEBANnPXEvL1VUA73N\u002fGfzpPQAGGcxtaJV9A+zbUMkXHS0DBviqS3bBSQHj2rZXOFUVAwz12+uyLVUBiJPhhjUxAQN+q9U2+TkNAV54YhJ5bVkA0IEAy4VxHQHrwiJoNbFNAN7+a029RW0C8VXeREuZCQOmjICd1YVJAfeD9VD+3RkCtWCeVrjlAQHPZLvmTZENApu133TajRECRGzIL2q1bQFh5L28PHzhAz97Ql46mRkAyaXZHB9FMQM2QsL+oZk1Avt6p41CWQEDzdb59Wyw\u002fQKOwLWH0vEtAY\u002fcfsYZeUEBY9yoOQ8JFQP8dDgTIAkpAZOB2ZAkUTUCFBk5ZD1NHQLRdTv0cIUxAGSsIRyQUU0AE2Xil67VJQDKjVfXRKklAUQWjkjoKREAU0sE74IxNQK431oz8hFVAuvdKm1HGRkDK18njjypOQHKzfHIZUVlA2NkL0h\u002fHW0Dp0J8T8+9cQCSXqPjgRkRARYEXl\u002fRdP0BS9Xp+s0xJQJG7NOrw60ZAgVeXOZFkRUDMBk\u002fO10VRQBFS4QSezVFAFMzVukf1WUBXwX8VWHZGQLzBW09ozEdAFeWzif6UYkBv8nbbrEo+QNth1chUeU1AmkYkgSDQTkD8b5neGFNJQGrcG3GEmEVAwevgZ1dUTUCI1nm1XT5HQARliq+pJkVA1AM+Nv\u002f\u002fVUAF6mAykHZKQKCn1z5YPFVAHEIubJTGS0AjHh89JtpDQMGTzY9BZ1JAX2yy2uscQ0A="},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"black","width":1.5},"name":"Real","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"cT0K16OQQECamZmZmSlhQLgehetRmEBAw\u002fUoXI8CTUD2KFyPwtVEQDMzMzMzU0FAmpmZmZl5QkCamZmZmQlkQEjhehSuJ0ZASOF6FK5nUUCF61G4HuVKQHE9Ctej8DFAAAAAAAAgTkDD9Shcj6JIQM3MzMzMjD1AFK5H4XoUOEDsUbgehWs\u002fQLgehetReEVAZmZmZmZmR0CPwvUoXC9DQK5H4XoUTkdAMzMzMzMzTUCamZmZmZlXQClcj8L1qERArkfhehReUECuR+F6FM5GQKRwPQrX41BAMzMzMzNzTkBmZmZmZsZaQHE9CtejcD9AzczMzMycYECamZmZmYlSQAAAAAAAAF9AFK5H4XrUR0DNzMzMzCxUQMP1KFyPIkJAFK5H4XrkU0DD9ShcjwI9QLgehetRuEFAZmZmZmbGWUApXI\u002fC9ShMQOxRuB6Fe1BAMzMzMzOzW0CamZmZmdlFQGZmZmZmhkpAw\u002fUoXI9iQkDsUbgehWs\u002fQKRwPQrXY0VAH4XrUbieQ0CamZmZmdlWQDMzMzMzczdAuB6F61FYQ0Bcj8L1KExSQM3MzMzMDFJA9ihcj8L1PkA9CtejcH08QOF6FK5HgVBApHA9CtcjU0Bcj8L1KLxCQOF6FK5HQUtA7FG4HoULSECF61G4HkVDQArXo3A9SktAAAAAAADAVkAUrkfhenRMQGZmZmZmZkxAUrgehevxRECF61G4HjVTQGZmZmZmBlVAXI\u002fC9SjcQkCPwvUoXE9OQGZmZmZmplhAMzMzMzMzVkBmZmZmZuZeQD0K16NwXUJACtejcD2qQEBxPQrXoxBOQOxRuB6F601Aj8L1KFyvQkBmZmZmZnZSQLgehetRGE5AZmZmZmamXEB7FK5H4bpLQDMzMzMzE0tAmpmZmZlZYkCkcD0K12M7QM3MzMzM7EpAcT0K16OwUUCamZmZmXlMQK5H4XoUzkhAzczMzMyMVUDsUbgehWtIQOF6FK5HgUdAZmZmZmbGT0A9CtejcF1LQDMzMzMzc1ZA9ihcj8L1MkAK16NwPapBQHsUrkfhWlNAcT0K16MwPEA="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"crimson","dash":"dash"},"name":"Pred RF","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"ATdDbY4JPUDTDgebrzBhQFNs0yhJhVBAWMhjKRhqUkC0coDMTHNGQANX9iCA4DtAXYkMfQ8cQEADmnmL63pZQA1KtUQKuEJABVK1dcp9R0D76EAPDsxIQO59suSu5jVARCjtdDllU0C9Q0QRql1IQJdXM0f7JUdAJo7UaF8+S0DF6S52aF4\u002fQNf+HdDTaElAm3SBVhBDSUD2tPrfJgNEQPH9r0190ldAk4FdYgO5T0BKmzpTSkVYQFqYqN9p+UZAUg\u002fHdJQ5VUChc30XKKNNQO1YBfI431BA7\u002fYXsy4OSkDTE1sf4ahUQLF16xqzbEBANnPXEvL1VUA73N\u002fGfzpPQAGGcxtaJV9A+zbUMkXHS0DBviqS3bBSQHj2rZXOFUVAwz12+uyLVUBiJPhhjUxAQN+q9U2+TkNAV54YhJ5bVkA0IEAy4VxHQHrwiJoNbFNAN7+a029RW0C8VXeREuZCQOmjICd1YVJAfeD9VD+3RkCtWCeVrjlAQHPZLvmTZENApu133TajRECRGzIL2q1bQFh5L28PHzhAz97Ql46mRkAyaXZHB9FMQM2QsL+oZk1Avt6p41CWQEDzdb59Wyw\u002fQKOwLWH0vEtAY\u002fcfsYZeUEBY9yoOQ8JFQP8dDgTIAkpAZOB2ZAkUTUCFBk5ZD1NHQLRdTv0cIUxAGSsIRyQUU0AE2Xil67VJQDKjVfXRKklAUQWjkjoKREAU0sE74IxNQK431oz8hFVAuvdKm1HGRkDK18njjypOQHKzfHIZUVlA2NkL0h\u002fHW0Dp0J8T8+9cQCSXqPjgRkRARYEXl\u002fRdP0BS9Xp+s0xJQJG7NOrw60ZAgVeXOZFkRUDMBk\u002fO10VRQBFS4QSezVFAFMzVukf1WUBXwX8VWHZGQLzBW09ozEdAFeWzif6UYkBv8nbbrEo+QNth1chUeU1AmkYkgSDQTkD8b5neGFNJQGrcG3GEmEVAwevgZ1dUTUCI1nm1XT5HQARliq+pJkVA1AM+Nv\u002f\u002fVUAF6mAykHZKQKCn1z5YPFVAHEIubJTGS0AjHh89JtpDQMGTzY9BZ1JAX2yy2uscQ0A="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"black","width":1.5},"name":"Real","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"cT0K16OQQECamZmZmSlhQLgehetRmEBAw\u002fUoXI8CTUD2KFyPwtVEQDMzMzMzU0FAmpmZmZl5QkCamZmZmQlkQEjhehSuJ0ZASOF6FK5nUUCF61G4HuVKQHE9Ctej8DFAAAAAAAAgTkDD9Shcj6JIQM3MzMzMjD1AFK5H4XoUOEDsUbgehWs\u002fQLgehetReEVAZmZmZmZmR0CPwvUoXC9DQK5H4XoUTkdAMzMzMzMzTUCamZmZmZlXQClcj8L1qERArkfhehReUECuR+F6FM5GQKRwPQrX41BAMzMzMzNzTkBmZmZmZsZaQHE9CtejcD9AzczMzMycYECamZmZmYlSQAAAAAAAAF9AFK5H4XrUR0DNzMzMzCxUQMP1KFyPIkJAFK5H4XrkU0DD9ShcjwI9QLgehetRuEFAZmZmZmbGWUApXI\u002fC9ShMQOxRuB6Fe1BAMzMzMzOzW0CamZmZmdlFQGZmZmZmhkpAw\u002fUoXI9iQkDsUbgehWs\u002fQKRwPQrXY0VAH4XrUbieQ0CamZmZmdlWQDMzMzMzczdAuB6F61FYQ0Bcj8L1KExSQM3MzMzMDFJA9ihcj8L1PkA9CtejcH08QOF6FK5HgVBApHA9CtcjU0Bcj8L1KLxCQOF6FK5HQUtA7FG4HoULSECF61G4HkVDQArXo3A9SktAAAAAAADAVkAUrkfhenRMQGZmZmZmZkxAUrgehevxRECF61G4HjVTQGZmZmZmBlVAXI\u002fC9SjcQkCPwvUoXE9OQGZmZmZmplhAMzMzMzMzVkBmZmZmZuZeQD0K16NwXUJACtejcD2qQEBxPQrXoxBOQOxRuB6F601Aj8L1KFyvQkBmZmZmZnZSQLgehetRGE5AZmZmZmamXEB7FK5H4bpLQDMzMzMzE0tAmpmZmZlZYkCkcD0K12M7QM3MzMzM7EpAcT0K16OwUUCamZmZmXlMQK5H4XoUzkhAzczMzMyMVUDsUbgehWtIQOF6FK5HgUdAZmZmZmbGT0A9CtejcF1LQDMzMzMzc1ZA9ihcj8L1MkAK16NwPapBQHsUrkfhWlNAcT0K16MwPEA="},"type":"scatter","xaxis":"x3","yaxis":"y3"},{"line":{"color":"royalblue","dash":"dot"},"name":"Pred LGBM","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"Mqxf65q6PUALG02BfoZhQB65x6Q0mE9A39cpQT35UkD0c88kd1BFQEXqTQPAejxAuIdNcpUCQEBbGiIq0\u002fdaQLxoDpkYM0JACrUvGlikR0BvMNqwi7pJQGm9DDvjYzdANN2IL\u002fudUkATgyVv\u002f41HQOBB0J0s0UZAcv+5C31bSEDgn3b7vUFAQOefRDcrrEhAl0OuSz3XSED6UJF\u002fpBZFQKgr5LEgNVtAOR9Q0mADT0Cod94j7hRYQLpRDfgZv0VA\u002fm6SPAmaVUDWf55FZIJOQDWOL8mYJlFAzfvtq6lSSkB7blGahzhVQCNwf8WbVEBAX5KhTwpqV0AH5Xi35HtQQIBAHjq3ZFxApb\u002f+l23VSkAQ07UftJ1RQHDDuWAYf0VAGTlxC8w0VkAn8hOKEChAQEk7F0NaKENAVj85Ho5uVkBPR6zXCstFQIfjiKgJaFNA741tGHKBWkDfYoK3OddDQMDNaHUwB1BAHRQzKY4vR0BxdcBD7Jo\u002fQLXycIknRERAxgF0JyKkQ0CObkgFM+JYQJgCCvsibDlAEcvDvv6gR0CMJJf\u002fBxpMQOxy+PEvEE9AZvudX1v8QECwovxs19c\u002fQGxfv5IsUUtA7TD0fux7UECTEAr6JexEQIHyOVX7MkpAeiyqyv3XTUBU4k\u002fLyatGQLzl0H30AE1A69ICVsbwUUD4s4D9DYlJQEB+\u002fnzNVEtADrf1RkMHRkCxapLH4QpNQIUAu3ElVlVADpp2BhyFRkCE+2Ba5FtOQPX1XY4ohVlAY9PSjm\u002fEWkCUco8QZ\u002f1dQJiQ\u002fHdU5kRALd0xkJ9fQUAn7MMAEz5IQJx8\u002fl+OckdApINOmokPRkDVicrX1RNSQFwb1vyKd1FAekoF8Yx6WUBeKSQN+5tGQInn6hCZwEZAb4f1Ucm2YkAcyD2Hk2o\u002fQF212K\u002fRCk1AX+C42ApjTkD70j\u002fRAXlKQO4EpRqAuEVAxykUovHoTUBrUTX83p5JQK9+xFQ+nUVAChB3I70lVkALhY4eGwxKQOG5qGLbZ1VA30wM11wtTEDlU5F05T9DQNzErmBaHlJAh2OU0Cv6Q0A="},"type":"scatter","xaxis":"x3","yaxis":"y3"},{"line":{"color":"black","width":1.5},"name":"Real","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"cT0K16OQQECamZmZmSlhQLgehetRmEBAw\u002fUoXI8CTUD2KFyPwtVEQDMzMzMzU0FAmpmZmZl5QkCamZmZmQlkQEjhehSuJ0ZASOF6FK5nUUCF61G4HuVKQHE9Ctej8DFAAAAAAAAgTkDD9Shcj6JIQM3MzMzMjD1AFK5H4XoUOEDsUbgehWs\u002fQLgehetReEVAZmZmZmZmR0CPwvUoXC9DQK5H4XoUTkdAMzMzMzMzTUCamZmZmZlXQClcj8L1qERArkfhehReUECuR+F6FM5GQKRwPQrX41BAMzMzMzNzTkBmZmZmZsZaQHE9CtejcD9AzczMzMycYECamZmZmYlSQAAAAAAAAF9AFK5H4XrUR0DNzMzMzCxUQMP1KFyPIkJAFK5H4XrkU0DD9ShcjwI9QLgehetRuEFAZmZmZmbGWUApXI\u002fC9ShMQOxRuB6Fe1BAMzMzMzOzW0CamZmZmdlFQGZmZmZmhkpAw\u002fUoXI9iQkDsUbgehWs\u002fQKRwPQrXY0VAH4XrUbieQ0CamZmZmdlWQDMzMzMzczdAuB6F61FYQ0Bcj8L1KExSQM3MzMzMDFJA9ihcj8L1PkA9CtejcH08QOF6FK5HgVBApHA9CtcjU0Bcj8L1KLxCQOF6FK5HQUtA7FG4HoULSECF61G4HkVDQArXo3A9SktAAAAAAADAVkAUrkfhenRMQGZmZmZmZkxAUrgehevxRECF61G4HjVTQGZmZmZmBlVAXI\u002fC9SjcQkCPwvUoXE9OQGZmZmZmplhAMzMzMzMzVkBmZmZmZuZeQD0K16NwXUJACtejcD2qQEBxPQrXoxBOQOxRuB6F601Aj8L1KFyvQkBmZmZmZnZSQLgehetRGE5AZmZmZmamXEB7FK5H4bpLQDMzMzMzE0tAmpmZmZlZYkCkcD0K12M7QM3MzMzM7EpAcT0K16OwUUCamZmZmXlMQK5H4XoUzkhAzczMzMyMVUDsUbgehWtIQOF6FK5HgUdAZmZmZmbGT0A9CtejcF1LQDMzMzMzc1ZA9ihcj8L1MkAK16NwPapBQHsUrkfhWlNAcT0K16MwPEA="},"type":"scatter","xaxis":"x4","yaxis":"y4"},{"line":{"color":"royalblue","dash":"dot"},"name":"Pred LGBM","showlegend":false,"x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiYw=="},"y":{"dtype":"f8","bdata":"Mqxf65q6PUALG02BfoZhQB65x6Q0mE9A39cpQT35UkD0c88kd1BFQEXqTQPAejxAuIdNcpUCQEBbGiIq0\u002fdaQLxoDpkYM0JACrUvGlikR0BvMNqwi7pJQGm9DDvjYzdANN2IL\u002fudUkATgyVv\u002f41HQOBB0J0s0UZAcv+5C31bSEDgn3b7vUFAQOefRDcrrEhAl0OuSz3XSED6UJF\u002fpBZFQKgr5LEgNVtAOR9Q0mADT0Cod94j7hRYQLpRDfgZv0VA\u002fm6SPAmaVUDWf55FZIJOQDWOL8mYJlFAzfvtq6lSSkB7blGahzhVQCNwf8WbVEBAX5KhTwpqV0AH5Xi35HtQQIBAHjq3ZFxApb\u002f+l23VSkAQ07UftJ1RQHDDuWAYf0VAGTlxC8w0VkAn8hOKEChAQEk7F0NaKENAVj85Ho5uVkBPR6zXCstFQIfjiKgJaFNA741tGHKBWkDfYoK3OddDQMDNaHUwB1BAHRQzKY4vR0BxdcBD7Jo\u002fQLXycIknRERAxgF0JyKkQ0CObkgFM+JYQJgCCvsibDlAEcvDvv6gR0CMJJf\u002fBxpMQOxy+PEvEE9AZvudX1v8QECwovxs19c\u002fQGxfv5IsUUtA7TD0fux7UECTEAr6JexEQIHyOVX7MkpAeiyqyv3XTUBU4k\u002fLyatGQLzl0H30AE1A69ICVsbwUUD4s4D9DYlJQEB+\u002fnzNVEtADrf1RkMHRkCxapLH4QpNQIUAu3ElVlVADpp2BhyFRkCE+2Ba5FtOQPX1XY4ohVlAY9PSjm\u002fEWkCUco8QZ\u002f1dQJiQ\u002fHdU5kRALd0xkJ9fQUAn7MMAEz5IQJx8\u002fl+OckdApINOmokPRkDVicrX1RNSQFwb1vyKd1FAekoF8Yx6WUBeKSQN+5tGQInn6hCZwEZAb4f1Ucm2YkAcyD2Hk2o\u002fQF212K\u002fRCk1AX+C42ApjTkD70j\u002fRAXlKQO4EpRqAuEVAxykUovHoTUBrUTX83p5JQK9+xFQ+nUVAChB3I70lVkALhY4eGwxKQOG5qGLbZ1VA30wM11wtTEDlU5F05T9DQNzErmBaHlJAh2OU0Cv6Q0A="},"type":"scatter","xaxis":"x4","yaxis":"y4"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.46],"title":{"text":"\u00cdndice de Tiempo (Horas)"}},"yaxis":{"anchor":"x","domain":[0.575,1.0],"title":{"text":"Concentraci\u00f3n (\u00b5g\u002fm\u00b3)"}},"xaxis2":{"anchor":"y2","domain":[0.54,1.0],"title":{"text":"\u00cdndice de Tiempo (Horas)"}},"yaxis2":{"anchor":"x2","domain":[0.575,1.0],"title":{"text":"Concentraci\u00f3n (\u00b5g\u002fm\u00b3)"}},"xaxis3":{"anchor":"y3","domain":[0.0,0.46],"title":{"text":"\u00cdndice de Tiempo (Horas)"}},"yaxis3":{"anchor":"x3","domain":[0.0,0.425],"title":{"text":"Concentraci\u00f3n (\u00b5g\u002fm\u00b3)"}},"xaxis4":{"anchor":"y4","domain":[0.54,1.0],"title":{"text":"\u00cdndice de Tiempo (Horas)"}},"yaxis4":{"anchor":"x4","domain":[0.0,0.425],"title":{"text":"Concentraci\u00f3n (\u00b5g\u002fm\u00b3)"}},"annotations":[{"font":{"size":16},"showarrow":false,"text":"RF: PM2.5 (Real vs Predicho)","x":0.23,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"RF: PM10 (Real vs Predicho)","x":0.77,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"LightGBM: PM2.5 (Real vs Predicho)","x":0.23,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"LightGBM: PM10 (Real vs Predicho)","x":0.77,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"}],"title":{"text":"Comparaci\u00f3n Temporal de Modelos Predictivos (\u00daltimos 100 registros horarias)"},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"height":750},                        {"responsive": true}                    )                };            </script>        </div>
+    </div>
+
+    <div class="full-box">
+        <h3>Fuente de Datos, Fechas y Limitaciones del Análisis</h3>
+
+        <p><b>Fuente de datos:</b> archivos entregados para el Proyecto Integrador CDA 2026, con formato análogo al de las estaciones de monitoreo de SENAMHI (Servicio Nacional de Meteorología e Hidrología del Perú) y MINAM/OEFA, correspondientes a la estación <b>San Borja</b>, Lima.</p>
+        <ul>
+            <li><code>DATOS_CONTAMINANTE_SBORJA.xlsx</code> &mdash; concentraciones horarias de PM2.5 y PM10 (hoja "SAN BORJA").</li>
+            <li><code>DATOS_METEOROLOGICOS_SBORJA.xlsx</code> &mdash; temperatura, humedad relativa, precipitación, velocidad y dirección del viento (hoja "SAN BORJA").</li>
+        </ul>
+
+        <p><b>Fecha de descarga/obtención de los archivos:</b> 01 de junio de 2026.</p>
+        <p><b>Periodo cubierto por el dataset limpio (usado en el análisis y el modelado):</b> 01 de junio de 2017 al 27 de enero de 2024 (28 155 registros horarios completos, sin valores faltantes).</p>
+
+        <p><b>Limitaciones del análisis:</b></p>
+        <ul>
+            <li>Los valores faltantes ("S/D") de PM2.5/PM10 se imputaron con el método MICE únicamente cuando las tres variables meteorológicas auxiliares (temperatura, humedad, viento) estaban disponibles en la misma hora; las filas sin meteorología completa fueron descartadas, lo que reduce el tamaño de la muestra frente al registro bruto original.</li>
+            <li>El criterio de detección de outliers (rango intercuartílico, IQR) tiene una limitación conocida en la variable de precipitación: al ser una variable "zero-inflated" (Q1 = Q3 = 0), cualquier hora con lluvia medible se marca como "outlier" aunque no sea un error de medición.</li>
+            <li>Los valores extremos de PM2.5/PM10 se conservaron intencionalmente, por representar episodios reales de contaminación (tráfico, quemas, eventos de polvo); esta decisión puede elevar la dispersión de las métricas de error de los modelos.</li>
+            <li>Los modelos predictivos (Random Forest, LightGBM) se entrenaron y evaluaron con datos históricos de una sola estación (San Borja); su capacidad de generalizar a periodos futuros, a otras estaciones o a condiciones atmosféricas no observadas en el histórico no ha sido validada.</li>
+            <li>Las correlaciones y relaciones reportadas entre contaminantes y variables meteorológicas son asociaciones estadísticas observacionales, no relaciones de causalidad comprobada.</li>
+        </ul>
+    </div>
+</body>
+</html>
